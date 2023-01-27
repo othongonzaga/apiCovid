@@ -9,7 +9,12 @@ namespace apiCOVID.Controllers
     public class CovidController : ControllerBase
     {
         [HttpGet]
-        public ActionResult <List<CovidModel>> BuscarDadosCovid()
+        public ActionResult <IEnumerable<CovidModel>> BuscarDadosCovidPorMunicipio()
+        {
+            return Ok();
+        }
+
+        public ActionResult<IEnumerable<CovidModel>> BuscarDadosCovidPorUF()
         {
             return Ok();
         }
