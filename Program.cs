@@ -1,3 +1,6 @@
+using apiCOVID.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace apiCOVID
 {
     public class Program
@@ -12,6 +15,7 @@ namespace apiCOVID
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+            builder.Services.AddDbContext<apiCovidDBContext>(options => options.UseNpgsql("Server=babar.db.elephantsql.com;Database=sqkttydt;User Id=sqkttydt;Password=V6cFtlsEPArPiMVtET65EGTfQWlBqpgw;"));
 
             var app = builder.Build();
 

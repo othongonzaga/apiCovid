@@ -1,7 +1,11 @@
-﻿namespace apiCOVID.Models
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace apiCOVID.Models
 {
+    [Keyless]
     public class CovidModel
     {
+        
         public string regiao { get; set; } 
         public string? estado { get; set; }
         public string? municipio { get; set; } 

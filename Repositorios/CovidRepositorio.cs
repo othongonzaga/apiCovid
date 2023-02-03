@@ -14,14 +14,14 @@ namespace apiCOVID.Repositorios
             _dbContext = apiCovidDBContext;
         }
 
-        public async Task<IEnumerable<CovidModel>> BuscarDadosCovidPorMunicipio(int codmun)
+        public IEnumerable<CovidModel> BuscarDadosCovidPorMunicipio(int codmun)
         {
-            return await _dbContext.CovidDados.Where(x => x.codmun == codmun);
+            return _dbContext.CovidDados.Where(x => x.codmun == codmun);
         }
 
-        public async Task<IEnumerable<CovidModel>> BuscarDadosCovidPorUF(int coduf)
+        public IEnumerable<CovidModel> BuscarDadosCovidPorUF(int coduf)
         {
-            return await _dbContext.CovidDados.Where(x => x.coduf == coduf);
+            return  _dbContext.CovidDados.Where(x => x.coduf == coduf);
         }
     }
 }
