@@ -4,7 +4,7 @@ namespace apiCOVID.Repositorios.Interfaces
 {
     public interface ICovid
     {
-        IEnumerable<CovidModel> BuscarDadosCovidPorMunicipio(int coduf);
-        IEnumerable<CovidModel> BuscarDadosCovidPorUF(int codmun);
+        IEnumerable<CovidModel> BuscarDadosCovidPorMunicipio(int codmun);
+        IEnumerable<CovidModel> BuscarDadosCovidPorUF(int coduf);
     }
 }

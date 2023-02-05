@@ -1,4 +1,5 @@
 ﻿using apiCOVID.Models;
+using apiCOVID.Repositorios.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,15 +9,25 @@ namespace apiCOVID.Controllers
     [ApiController]
     public class CovidController : ControllerBase
     {
-        [HttpGet]
-        public ActionResult <IEnumerable<CovidModel>> BuscarDadosCovidPorMunicipio()
+        private readonly ICovid _covidRepositorio;
+
+        public CovidController(ICovid covidRepositorio)
         {
-            return Ok();
+            _covidRepositorio = covidRepositorio;
         }
 
-        public ActionResult<IEnumerable<CovidModel>> BuscarDadosCovidPorUF()
+        [HttpGet]
+        public ActionResult <IEnumerable<CovidModel>> BuscarDadosCovidPorMunicipio(int codmun)
         {
-            return Ok();
+            IEnumerable<CovidModel> covid = _covidRepositorio.BuscarDadosCovidPorMunicipio(codmun);
+            return Ok(covid);
+        }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<CovidModel>> BuscarDadosCovidPorUF(int coduf)
+        {
+            IEnumerable<CovidModel> covid = _covidRepositorio.BuscarDadosCovidPorUF(coduf);
+            return Ok(covid);
         }
     }
 }
