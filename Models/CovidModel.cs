@@ -10,8 +10,8 @@ namespace apiCOVID.Models
         public string? estado { get; set; }
         public string? municipio { get; set; } 
         public int coduf  { get; set; }
-        public int codmun { get; set; }
-        public int codRegiaoSaude { get; set; }
+        public int? codmun { get; set; }
+        public int? codRegiaoSaude { get; set; }
         public string? nomeRegiaoSaude { get; set; } 
         public DateTime data { get; set; }
         public int semanaEpi { get; set; }
@@ -22,6 +22,6 @@ namespace apiCOVID.Models
         public int? obitosNovos { get; set; }
         public int Recuperadosnovos { get; set; }
         public int emAcompanhamentoNovos { get; set; }
-        public int interiorOUmetropolitana { get; set; }
+        public int?  interiorOUmetropolitana { get; set; }
 }
 }
