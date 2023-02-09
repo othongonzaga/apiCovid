@@ -1,7 +1,9 @@
 ﻿using apiCOVID.Data;
 using apiCOVID.Models;
 using apiCOVID.Repositorios.Interfaces;
+using Microsoft.AspNetCore.Connections;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace apiCOVID.Repositorios
 {
@@ -22,6 +24,12 @@ namespace apiCOVID.Repositorios
         public IEnumerable<CovidModel> BuscarDadosCovidPorUF(int coduf)
         {
             return  _dbContext.CovidDados.Where(x => x.coduf == coduf);
+        }
+
+        public bool ListarRomulo()
+        {
+            IEnumerable<CovidModel>  query=   from CovidDados
+                                              select regiao;
         }
     }
 }
