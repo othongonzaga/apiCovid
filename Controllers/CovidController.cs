@@ -29,5 +29,12 @@ namespace apiCOVID.Controllers
             IEnumerable<CovidModel> covid = _covidRepositorio.BuscarDadosCovidPorUF(coduf);
             return Ok(covid);
         }
+
+        [HttpGet]
+        public ActionResult<IEnumerable<CovidModel>> Index()
+        {
+            IEnumerable<CovidModel> covid = _covidRepositorio.ListarMunicipioMaisCasos();
+            return Ok(covid);
+        }
     }
 }

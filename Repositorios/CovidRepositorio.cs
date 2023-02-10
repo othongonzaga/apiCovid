@@ -26,10 +26,9 @@ namespace apiCOVID.Repositorios
             return  _dbContext.CovidDados.Where(x => x.coduf == coduf);
         }
 
-        public bool ListarRomulo()
+        public IEnumerable<CovidModel> ListarMunicipioMaisCasos()
         {
-            IEnumerable<CovidModel>  query=   from CovidDados
-                                              select regiao;
+            return _dbContext.CovidDados.OrderByDescending(x => x.casosAcumulado).Take(10);
         }
     }
 }
