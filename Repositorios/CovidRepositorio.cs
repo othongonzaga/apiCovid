@@ -30,5 +30,10 @@ namespace apiCOVID.Repositorios
         {
             return _dbContext.CovidDados.OrderByDescending(x => x.casosAcumulado).Take(10);
         }
+
+        public IEnumerable<CovidModel> ListarMunicipioMaisObitos()
+        {
+            return _dbContext.CovidDados.OrderByDescending(x => x.obitosAcumulado).Take(10);
+        }
     }
 }

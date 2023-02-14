@@ -6,7 +6,7 @@ namespace apiCOVID.Repositorios.Interfaces
     {
         IEnumerable<CovidModel> BuscarDadosCovidPorMunicipio(int codmun);
         IEnumerable<CovidModel> BuscarDadosCovidPorUF(int coduf);
-
         IEnumerable<CovidModel> ListarMunicipioMaisCasos();
+        IEnumerable<CovidModel> ListarMunicipioMaisObitos();
     }
 }
